@@ -155,3 +155,47 @@ You can download the skin with all of the examples @TODO(PATH FIEL AND SHITS)
   SolidColor=189,195,204
   LeftMouseUpAction=#BT_CheckBluetooth#
   ```
+- Note: you can run this once every skin refresh by adding:
+  `OnRefreshAction=#BT_CheckBluetooth#`
+  To the rainmeter section of your skin.
+#### BT_ToggleBluetooth
+- Will toggle bluetooth ON or OFF depends on the current bluetooth status.
+- Handelers:
+  - BT_OnBluetoothToggle_On: this variable will be called when bluetooth was found off and then toggled on.
+  - BT_OnBluetoothCheck_Off: this variable will be called when bluetooth was found on and then toggled off.
+  - BT_AfterBluetoothToggle: this variable will be called regardless of the bluetooth status, after the bluetooth was toggled.
+- Example:
+  ```ini
+  [Variables]
+  BT_OnBluetoothToggle_On=[!SetOption MeterStringStatus Text "Bluetooth was found off, now it's on, it was toggled by the toggle function"][!UpdateMeter MeterStringStatus]
+  BT_OnBluetoothToggle_Off=[!SetOption MeterStringStatus Text "Bluetooth was found on, now it's off, it was toggled by the toggle function"][!UpdateMeter MeterStringStatus]
+  ;every time after the bluetooth is toggled regardless of the bluetooth status the background color will turn blue for a second.
+  BT_AfterBluetoothToggle=[!SetOption MeterStringStatus SolidColor 66,107,244][!UpdateMeter MeterStringStatus][!Delay 1000][!SetOption MeterStringStatus SolidColor 189,195,204][!UpdateMeter MeterStringStatus]
+  [ButtonBluetoothToggle]
+  Meter=String
+  Text=Toggle Bluetooth
+  FontColor=0,0,0
+  FontSize=16
+  AntiAlias=1
+  SolidColor=189,195,204
+  LeftMouseUpAction=#BT_ToggleBluetooth#
+  ```
+#### BT_TurnOnBluetooth
+- Will turn on the bluetooth if it's off, if it's on nothing will happen.
+- Handelers:
+  - BT_AfterBluetoothTurnedOn: this variable will be called after bluetooth is turned on.
+- Example:
+  ```ini
+  [Variables]
+  BT_AfterBluetoothTurnedOn=[!SetOption MeterStringStatus Text "Bluetooth turned on"][!UpdateMeter MeterStringStatus]
+
+  [ButtonBluetoothTurnOn]
+  Meter=String
+  Text=Turn On Bluetooth
+  FontColor=0,0,0
+  FontSize=16
+  AntiAlias=1
+  SolidColor=189,195,204
+  LeftMouseUpAction=#BT_TurnOnBluetooth#
+  ```
+- Note: The BT_AfterBluetoothTurnedOn will be called even if bluetooth is already on. which is why should always keep a global reference of the bluetooth status, by using BT_CheckBluetooth on skins load/refresh.
