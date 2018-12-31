@@ -9,10 +9,10 @@ To use in your skin you need to
 2 .inc files, one with some Variables, and one with the Measures used to run the batch files and get their output.
 
 ### Installing
-- Clone or download this repository and unzip it.
-- Go to @TODO(insert path)
-- Copy @TODO(insert path)
-- Paste it in your Skin's **@Resources** folder.
+1. Clone or download this repository and unzip it.
+2. Go to @TODO(insert path)
+3. Copy @TODO(insert path)
+4. Paste it in your Skin's **@Resources** folder.
 
 ### Adding to a skin
 After pasting the plugin's folder in your skin's **@Resources** folder.
@@ -37,4 +37,18 @@ This file contains some Measures that the actions from the first file will trigg
 
 Great! Now you can use the plugin from your skin.
 
+## Usage
+To use our functions we just specify the function Variables name whenever we want to use it.
 
+E.G.
+```ini
+[MeterSwitch]
+Meter=Image
+DynamicVariables=1
+Group=Tweenable
+ImageName=#@#\Images\switch.png
+Greyscale=1
+ImageTint=#SwitchBackgroundColorActive#
+W=#SwitchW#
+H=#SwitchH#
+```
