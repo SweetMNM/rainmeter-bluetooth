@@ -15,4 +15,6 @@ To use in your skin you need to
 - Paste it in your Skin's **@Resources** folder.
 
 ### Usage
-Create a new skin
+After pasting the plugin's folder in your skin's **@Resources** folder.
+Open your *skin.ini* file with your favorite Text editor.
+Create a [Variable] 
