@@ -116,7 +116,22 @@ You can download this example skin @TODO(FILE PATH) lbah blah
 Most functions **need to be handled** after they are done executing.
 For that we can define specific actions as Variables that **will be executed when our functions are done**.
 Just like we did in the first example.
+
 Each function will have a small example, demonstrating the usage and the handlers.
+
+With every example we are going to talk about this meter:
+```ini
+[MeterStringStatus]
+Meter=String
+Text=Nothing to see here
+FontColor=237,249,62
+FontSize=12
+AntiAlias=1
+```
+When we are saying status meter.
+
+We will use it to demonstrate the use of function handelers.
+
 You can download the skin with all of the examples @TODO(PATH FIEL AND SHITS)
 
 ### Function List
@@ -127,8 +142,16 @@ You can download the skin with all of the examples @TODO(PATH FIEL AND SHITS)
   - BT_OnBluetoothCheck_Off: this variable will be called when bluetooth was checked and found off.
 - Example:
   ```ini
-  code=ded
-  few=fewf
-  [fewfe]
-  feF=fewf=fewfe
+  [Variables]
+  BT_OnBluetoothCheck_On=[!SetOption MeterStringStatus Text "Bluetooth was checked and found on"][!UpdateMeter MeterStringStatus]
+  BT_OnBluetoothCheck_Off=[!SetOption MeterStringStatus Text "Bluetooth was checked and found off"][!UpdateMeter MeterStringStatus]
+
+  [ButtonBluetoothCheck]
+  Meter=String
+  Text=Check Bluetooth
+  FontColor=0,0,0
+  FontSize=16
+  AntiAlias=1
+  SolidColor=189,195,204
+  LeftMouseUpAction=#BT_CheckBluetooth#
   ```
