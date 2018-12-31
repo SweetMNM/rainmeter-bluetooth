@@ -14,7 +14,7 @@ To use in your skin you need to
 - Copy @TODO(insert path)
 - Paste it in your Skin's **@Resources** folder.
 
-### Usage
+### Adding to a skin
 After pasting the plugin's folder in your skin's **@Resources** folder.
 Open your *skin.ini* file with your favorite Text editor.
 
@@ -25,4 +25,16 @@ Inside the Variables section [include](https://docs.rainmeter.net/manual/skins/i
 
 `@include=#@#\bluetooth\bluetoothVariables.inc`
 
-\#@\# refers
+Doing that gives us access to important Variables, that later we will be able to use as actions to do some bluetooth things.
+
+\#@\# refers to our @Resources folder and the rest of the path is our .inc file.
+
+Below the Variables section we need to include another .inc file.
+
+`@include2=#@#\bluetooth\bluetooth.inc`
+
+This file contains some Measures that the actions from the first file will trigger.
+
+Great! Now you can use the plugin from your skin.
+
+
