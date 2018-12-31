@@ -10,9 +10,9 @@ To use in your skin you need to
 
 ### Installing
 1. Clone or download this repository and unzip it.
-2. Go to @TODO(insert path)
-3. Copy @TODO(insert path)
-4. Paste it in your Skin's **@Resources** folder.
+2. Go to the Plugin folder
+3. Copy the bluetooth folder
+4. Paste it in your Skin's **@Resources** folder (You **must** paste it there).
 
 ### Adding to a skin
 After pasting the plugin's folder in your skin's **@Resources** folder.
@@ -111,7 +111,7 @@ We are doing the same as last time but this time we are changing the status to:
 We want the message to display for 2 seconds and then reset the message to the default message.
 To achive this result we use [!Delay](https://docs.rainmeter.net/manual/bangs/#Delay).
 
-You can download this example skin @TODO(FILE PATH) lbah blah
+You can find this example skin under the Skins folder, it's called firstExample.ini
 ## Functions
 Most functions **need to be handled** after they are done executing.
 For that we can define specific actions as Variables that **will be executed when our functions are done**.
@@ -132,8 +132,7 @@ When we are saying status meter.
 
 We will use it to demonstrate the use of function handelers.
 
-You can download the skin with all of the examples @TODO(PATH FIEL AND SHITS)
-
+You can find this example skin under the Skins folder, it's called firstExample.ini
 ### Function List
 #### BT_CheckBluetooth
 - Will check if bluetooth is ON or OFF
@@ -155,7 +154,8 @@ You can download the skin with all of the examples @TODO(PATH FIEL AND SHITS)
   SolidColor=189,195,204
   LeftMouseUpAction=#BT_CheckBluetooth#
   ```
-- Note: you can run this once every skin refresh by adding:
+- Note:
+  you can run this once every skin refresh by adding:
   `OnRefreshAction=#BT_CheckBluetooth#`
   To the rainmeter section of your skin.
 #### BT_ToggleBluetooth
@@ -198,4 +198,43 @@ You can download the skin with all of the examples @TODO(PATH FIEL AND SHITS)
   SolidColor=189,195,204
   LeftMouseUpAction=#BT_TurnOnBluetooth#
   ```
-- Note: The BT_AfterBluetoothTurnedOn will be called even if bluetooth is already on. which is why should always keep a global reference of the bluetooth status, by using BT_CheckBluetooth on skins load/refresh.
+- Note:
+  The BT_AfterBluetoothTurnedOn will be called even if bluetooth is already on. which is why should always keep a global reference of the bluetooth status, by using BT_CheckBluetooth on skins load/refresh.
+#### BT_TurnOffBluetooth
+- Will turn off the bluetooth if it's on, if it's off nothing will happen.
+- Handelers:
+  - BT_AfterBluetoothTurnedOff: this variable will be called after bluetooth is turned off.
+- Example:
+  ```ini
+  [Variables]
+  BT_AfterBluetoothTurnedOff=[!SetOption MeterStringStatus Text "Bluetooth turned off"][!UpdateMeter MeterStringStatus]
+
+  [ButtonBluetoothTurnOff]
+  Meter=String
+  Text=Turn Off Bluetooth
+  FontColor=0,0,0
+  FontSize=16
+  AntiAlias=1
+  SolidColor=189,195,204
+  LeftMouseUpAction=#BT_TurnOffBluetooth#
+  ```
+- Note:
+  The BT_AfterBluetoothTurnedOff will be called even if bluetooth is already off. which is why should always keep a global reference of the bluetooth status, by using BT_CheckBluetooth on skins load/refresh.
+#### BT_OpenBluetoothDevices
+- Will open the bluetooth settings page.
+- Example:
+  ```ini
+  [ButtonOpenBluetoothSettings]
+  Meter=String
+  Text=Open Bluetooth settings
+  FontColor=0,0,0
+  FontSize=16
+  AntiAlias=1
+  SolidColor=189,195,204
+  LeftMouseUpAction=#BT_OpenBluetoothDevices#
+  ```
+- Note:
+  this function has no handelers.
+
+## Speciel Thanks
+To [Ben N](https://superuser.com/a/1293303) which i shamelessly stole the powershell script from.
