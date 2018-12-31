@@ -1,5 +1,5 @@
 # rainmeter-bluetooth
-A rainmeter plugin to implement **bluetooth** functionality.
+A [rainmeter](https://www.rainmeter.net/) plugin to implement **bluetooth** functionality.
 
 ## Getting Started
 rainmeter-bluetooth is **not** a usual rainmeter plugin.
@@ -19,4 +19,10 @@ After pasting the plugin's folder in your skin's **@Resources** folder.
 Open your *skin.ini* file with your favorite Text editor.
 
 Create a
-[Variable](https://docs.rainmeter.net/manual/variables/) Section if you don't already have one.
+[Variables](https://docs.rainmeter.net/manual/variables/) Section if you don't already have one.
+
+Inside the Variables section [include](https://docs.rainmeter.net/manual/skins/include-option/) the first .inc file.
+
+`@include=#@#\bluetooth\bluetoothVariables.inc`
+
+\#@\# refers
