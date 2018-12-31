@@ -51,7 +51,7 @@ Adding the plugin to the skin
 
 @include2=#@#\bluetooth\bluetooth.inc
 ```
-This will create a nice blue circle. that will call the BT_TurnOnBluetooth function on click (More about the BT_TurnOnBluetooth function and other functions can be found under the function section).
+This will create a nice blue circle. that will call the **BT_TurnOnBluetooth** function **on click** (More about the BT_TurnOnBluetooth function and other functions can be found under the function section).
 ```ini
 [MeterBluetoothOn]
 Meter=Roundline
@@ -68,7 +68,7 @@ LeftMouseUpAction=#BT_TurnOnBluetooth#
 ```
 Now if bluetooth is off we can click our circle to turn it on.
 
-We need to let our user know what's going on.
+We need to **let our user know** what's going on.
 
 Lets add a string that will be used to update the user.
 ```ini
@@ -86,13 +86,13 @@ This simple action will set the **text** **option** for the **MeterStringStatus*
 
 `[!SetOption MeterStringStatus Text "Bluetooth is turnning on"][!UpdateMeter MeterStringStatus]`
 
-Lets add it to the LeftMouseUpAction for our circle. it should look something like this.
+Lets add it to the **LeftMouseUpAction** for our circle. it should look something like this.
 
 `LeftMouseUpAction=#BT_TurnOnBluetooth#[!SetOption MeterStringStatus Text "Bluetooth is turnning on"][!UpdateMeter MeterStringStatus]`
 
-Then we want to let the user know when the bluetooth is on (takes about 0.5-0.8 seconds most of the times).
+Then we want to let the user know when the bluetooth is on (takes about **0.5 seconds** most of the times).
 
-This is where functions handlers come in handy.
+This is where **functions handlers** come in handy.
 
 Lets define a new variable in our variables section.
 
@@ -104,7 +104,10 @@ Lets give it this value:
 
 `[!SetOption MeterStringStatus Text "Bluetooth was turned on"][!UpdateMeter MeterStringStatus]`
 
-We are doing the same as last time but this time we are changing the status to: "bluetooth was turned on".
+We are doing the same as last time but this time we are changing the status to:
+
+> "bluetooth was turned on"
+
 We want the message to display for 2 seconds and then reset the message to the default message.
 To achive this result we use [!Delay](https://docs.rainmeter.net/manual/bangs/#Delay)
 ## Functions
