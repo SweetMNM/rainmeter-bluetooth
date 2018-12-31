@@ -102,20 +102,33 @@ The plugin knows to run this variable after the bluetooth is turned on, same thi
 
 Lets give it this value:
 
-`[!SetOption MeterStringStatus Text "Bluetooth was turned on"][!UpdateMeter MeterStringStatus]`
+`[!SetOption MeterStringStatus Text "Bluetooth was turned on"][!UpdateMeter MeterStringStatus][!Delay 2000][!SetOption MeterStringStatus Text "Nothing to see here"][!UpdateMeter MeterStringStatus]`
 
 We are doing the same as last time but this time we are changing the status to:
 
 > "bluetooth was turned on"
 
 We want the message to display for 2 seconds and then reset the message to the default message.
-To achive this result we use [!Delay](https://docs.rainmeter.net/manual/bangs/#Delay)
-## Functions
-Most functions need to be handled after they are done executing.
-For that we can define spesific actions as Variables that will be executed when our functions are done.
-Don't worry if this sounds a little confusing. A couple of examples with the functions list should fix that.
+To achive this result we use [!Delay](https://docs.rainmeter.net/manual/bangs/#Delay).
 
-### BT_CheckBluetooth
+You can download this example skin @TODO(FILE PATH) lbah blah
+## Functions
+Most functions **need to be handled** after they are done executing.
+For that we can define specific actions as Variables that **will be executed when our functions are done**.
+Just like we did in the first example.
+Each function will have a small example, demonstrating the usage and the handlers.
+You can download the skin with all of the examples @TODO(PATH FIEL AND SHITS)
+
+### Function List
+#### BT_CheckBluetooth
 - Will check if bluetooth is ON or OFF
-- Variables to handle:
-  - BT_OnBluetoothCheck_On
+- Handelers:
+  - BT_OnBluetoothCheck_On: this variable will be called when bluetooth was checked and found on.
+  - BT_OnBluetoothCheck_Off: this variable will be called when bluetooth was checked and found off.
+- Example:
+  ```ini
+  code=ded
+  few=fewf
+  [fewfe]
+  feF=fewf=fewfe
+  ```
