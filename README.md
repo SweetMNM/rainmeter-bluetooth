@@ -128,7 +128,7 @@ FontColor=237,249,62
 FontSize=12
 AntiAlias=1
 ```
-When we are saying status meter.
+When you see MeterStringStatus.
 
 We will use it to demonstrate the use of function handelers.
 
